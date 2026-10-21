@@ -1,38 +1,38 @@
-EVIDENCIA Y EXPLICACION DE CONCEPTOS
-PRACTICA 11 - NOMINA MENSUAL
-CURSO: PROGRAMACION II
+EVIDENCIA Y EXPLICACIÓN DE CONCEPTOS
+PRÁCTICA 11 - NÓMINA MENSUAL
+CURSO: PROGRAMACIÓN II
 
 1. ARREGLO SIMPLE Y ARRAYLIST
-Para los meses use un arreglo simple de tipo String llamado MESES que tiene los 12 meses del año ya guardados. Como la cantidad de meses no cambia, el arreglo es de tamano fijo y para mostrar el mes que pide el usuario utilizo el indice MESES[numeroMes - 1].
-Para los trabajadores use una coleccion ArrayList llamada nomina. Elegi ArrayList porque la cantidad de empleados no es fija y puede ir aumentando conforme se registran. Para guardar cada empleado use el metodo add() y para saber cuantos empleados llevo registrados use el metodo size(). Para mostrar la lista completa en el reporte recorri el ArrayList utilizando un ciclo for de tipo for-each.
+Para los meses usé un arreglo simple de tipo String llamado MESES que tiene los 12 meses del año ya guardados. Como la cantidad de meses no cambia, el arreglo es de tamaño fijo y, para mostrar el mes que pide el usuario, utilizo el índice MESES[numeroMes - 1].
+Para los trabajadores usé una colección ArrayList llamada nomina. Elegí ArrayList porque la cantidad de empleados no es fija y puede ir aumentando conforme se registran. Para guardar cada empleado usé el método add() y, para saber cuántos empleados llevo registrados, usé el método size(). Para mostrar la lista completa en el reporte, recorrí el ArrayList utilizando un ciclo for de tipo for-each.
 
-2. CLASE ABSTRACTA Y METODOS ABSTRACTOS
-Cree la clase Empleado como una clase abstracta porque representa la base de cualquier trabajador, pero no se debe instanciar directamente con new Empleado. En esta clase declare los metodos abstractos calcularPago() y obtenerTipo(), para obligar a que las clases hijas definan su propia logica de calculo y su tipo.
+2. CLASE ABSTRACTA Y MÉTODOS ABSTRACTOS
+Creé la clase Empleado como una clase abstracta porque representa la base de cualquier trabajador, pero no se debe instanciar directamente con new Empleado. En esta clase declaré los métodos abstractos calcularPago() y obtenerTipo(), para obligar a que las clases hijas definan su propia lógica de cálculo y su tipo.
 
 3. HERENCIA Y SOBREESCRITURA (@OVERRIDE)
-Las clases EmpleadoFijo y EmpleadoPorHora heredan de la clase base Empleado usando la palabra extends. Ambas subclases utilizan la anotacion @Override para sobreescribir los metodos calcularPago() y obtenerTipo(). Por ejemplo, EmpleadoFijo calcula el pago sumando el sueldo mas la bonificacion, mientras que EmpleadoPorHora multiplica el pago por hora por las horas trabajadas.
+Las clases EmpleadoFijo y EmpleadoPorHora heredan de la clase base Empleado usando la palabra extends. Ambas subclases utilizan la anotación @Override para sobreescribir los métodos calcularPago() y obtenerTipo(). Por ejemplo, EmpleadoFijo calcula el pago sumando el sueldo más la bonificación, mientras que EmpleadoPorHora multiplica el pago por hora por las horas trabajadas.
 
 4. POLIMORFISMO
-En el programa guardo los dos tipos de empleados (fijos y por hora) dentro de la misma lista ArrayList de tipo Empleado. Cuando imprimo el reporte de la nomina, recorro la lista y llamo al metodo calcularPago() de cada objeto. Gracias al polimorfismo, Java reconoce automaticamente que formula ejecutar segun el tipo de empleado que sea, sin necesidad de usar condiciones como if, switch o instanceof para decidir el calculo.
+En el programa guardo los dos tipos de empleados (fijos y por hora) dentro de la misma lista ArrayList de tipo Empleado. Cuando imprimo el reporte de la nómina, recorro la lista y llamo al método calcularPago() de cada objeto. Gracias al polimorfismo, Java reconoce automáticamente qué fórmula ejecutar según el tipo de empleado que sea, sin necesidad de usar condiciones como if, switch o instanceof para decidir el cálculo.
 
 5. ENCAPSULAMIENTO Y ACCESO
-Todos los atributos de las clases (dpi, nombre, sueldoMensual, bonificacion, pagoPorHora y horasTrabajadas) los declare como private para proteger los datos y evitar que se modifiquen directamente desde fuera. Para consultar la informacion desde otras clases use metodos de acceso getters como getDpi() y getNombre().
+Todos los atributos de las clases (dpi, nombre, sueldoMensual, bonificacion, pagoPorHora y horasTrabajadas) los declaré como private para proteger los datos y evitar que se modifiquen directamente desde fuera. Para consultar la información desde otras clases usé métodos de acceso getters como getDpi() y getNombre().
 
-6. CONSTRUCTORES, PARAMETROS Y ARGUMENTOS
-En cada clase cree constructores con parametros para recibir los datos iniciales al momento de crear el objeto.
-- Parametro: Es la variable declarada en la definicion del constructor, por ejemplo "String dpi" en la clase Empleado.
-- Argumento: Es el valor real que le paso cuando instancio el objeto con new, por ejemplo el numero "1234567890101" ingresado por el usuario.
-Dentro de los constructores use la palabra this para diferenciar los atributos de la clase de los parametros que reciben el mismo nombre, por ejemplo this.nombre = nombre. Ademas, en las clases hijas use super(dpi, nombre) para enviarle los datos comunes al constructor de la clase padre Empleado.
+6. CONSTRUCTORES, PARÁMETROS Y ARGUMENTOS
+En cada clase creé constructores con parámetros para recibir los datos iniciales al momento de crear el objeto.
+- Parámetro: Es la variable declarada en la definición del constructor, por ejemplo "String dpi" en la clase Empleado.
+- Argumento: Es el valor real que le paso cuando instancio el objeto con new, por ejemplo el número "1234567890101" ingresado por el usuario.
+Dentro de los constructores usé la palabra this para diferenciar los atributos de la clase de los parámetros que reciben el mismo nombre, por ejemplo this.nombre = nombre. Además, en las clases hijas usé super(dpi, nombre) para enviarle los datos comunes al constructor de la clase padre Empleado.
 
-7. AMBITO Y ALCANCE DE VARIABLES
-En el codigo aplique diferentes niveles de variables:
-- Atributo: La variable nomina de tipo ArrayList declarada a nivel de clase en Main, la cual se puede utilizar en todos los metodos de esa clase.
-- Parametro: La variable mensaje en el metodo capturarDoublePositivo(String mensaje), la cual solo existe dentro de ese metodo mientras se ejecuta.
-- Variable local: La variable totalNomina declarada dentro del metodo imprimirNomina(), la cual solo existe durante la ejecucion de ese bloque de codigo y desaparece al terminar.
+7. ÁMBITO Y ALCANCE DE VARIABLES
+En el código apliqué diferentes niveles de variables:
+- Atributo: La variable nomina de tipo ArrayList declarada a nivel de clase en Main, la cual se puede utilizar en todos los métodos de esa clase.
+- Parámetro: La variable mensaje en el método capturarDoublePositivo(String mensaje), la cual solo existe dentro de ese método mientras se ejecuta.
+- Variable local: La variable totalNomina declarada dentro del método imprimirNomina(), la cual solo existe durante la ejecución de ese bloque de código y desaparece al terminar.
 
 8. CASO DE PRUEBA VERIFICADO
-Realice la comprobacion requerida en la guia con los siguientes datos:
+Realicé la comprobación requerida en la guía con los siguientes datos:
 - Mes seleccionado: 3 (Muestra Marzo consultando MESES[2]).
-- Empleado 1: Ana Lopez (Empleado Fijo) con sueldo de Q 4000.00 y bonificacion de Q 300.00. Pago calculado: Q 4300.00.
-- Empleado 2: Luis Perez (Empleado por Hora) con tarifa de Q 25.00 y 120 horas trabajadas. Pago calculado: Q 3000.00.
-- Resultado final del reporte: 2 trabajadores registrados y un Total de nomina de Q 7300.00.
+- Empleado 1: Ana López (Empleado Fijo) con sueldo de Q 4000.00 y bonificación de Q 300.00. Pago calculado: Q 4300.00.
+- Empleado 2: Luis Pérez (Empleado por Hora) con tarifa de Q 25.00 y 120 horas trabajadas. Pago calculado: Q 3000.00.
+- Resultado final del reporte: 2 trabajadores registrados y un Total de nómina de Q 7300.00.
