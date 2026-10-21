@@ -1,0 +1,41 @@
+====================================================================
+EVIDENCIA Y EXPLICACIÓN DE CONCEPTOS - PRÁCTICA 11 (PROGRAMACIÓN II)
+====================================================================
+
+1. ARREGLO SIMPLE Y ARRAYLIST:
+   - String[] MESES: Arreglo simple de tamaño fijo (12 elementos) para guardar los meses. Se consulta mediante el índice `MESES[numeroMes - 1]`.
+   - ArrayList<Empleado> nomina: Colección dinámica para almacenar empleados.
+   - add(): Utilizado para insertar empleados (e.g., `nomina.add(ef)`).
+   - size(): Retorna el número actual de trabajadores registrados.
+   - Recorrido: Se realiza con un bucle for-each `for (Empleado emp : nomina)`.
+
+2. CLASE ABSTRACTA Y MÉTODOS ABSTRACTOS:
+   - Empleado es una clase abstracta (`public abstract class Empleado`) que no se puede instanciar directamente.
+   - Declara los métodos abstractos `calcularPago()` y `obtenerTipo()`.
+
+3. HERENCIA Y SOBRESCRITURA (@Override):
+   - EmpleadoFijo y EmpleadoPorHora extienden de Empleado (`extends Empleado`).
+   - Ambas subclases sobreescriben `@Override` los métodos abstractos con su propia fórmula.
+
+4. POLIMORFISMO:
+   - Se almacenan diferentes tipos de objetos (EmpleadoFijo, EmpleadoPorHora) en una sola lista de tipo `ArrayList<Empleado>`.
+   - Al imprimir el reporte, se llama a `emp.calcularPago()` sin condicionales (if/switch/instanceof), permitiendo que cada objeto ejecute su propia lógica.
+
+5. ENCAPSULAMIENTO:
+   - Todos los atributos (`dpi`, `nombre`, `sueldoMensual`, etc.) son `private`.
+   - Se accede a ellos mediante getters.
+
+6. DIFERENCIA ENTRE PARÁMETRO Y ARGUMENTO:
+   - Parámetro: Variable declarada en la definición de un método/constructor (e.g., `String dpi` en `public EmpleadoFijo(String dpi, ...)`).
+   - Argumento: El valor real que se envía al invocarlo (e.g., `"1234567890101"` en `new EmpleadoFijo(dpi, nombre, ...)`).
+
+7. ÁMBITO Y ALCANCE DE VARIABLES:
+   - Atributo: `private static ArrayList<Empleado> nomina;` -> Se puede acceder en toda la clase Main.
+   - Parámetro: `String mensaje` en `capturarDoublePositivo(String mensaje)` -> Solo existe dentro de ese método.
+   - Variable local: `double totalNomina = 0;` en `imprimirNomina()` -> Solo existe dentro del bloque del método `imprimirNomina`.
+
+8. CASO DE PRUEBA VERIFICADO:
+   - Mes 3 -> Marzo (MESES[2]).
+   - Ana López (Fijo): Sueldo Q 4000.00 + Bonificación Q 300.00 = Q 4300.00.
+   - Luis Pérez (Por hora): Tarifa Q 25.00 * 120 hrs = Q 3000.00.
+   - Total trabajadores: 2 | Total nómina: Q 7300.00.
