@@ -3,7 +3,7 @@ PRACTICA 11 - NOMINA MENSUAL
 CURSO: PROGRAMACION II
 
 1. ARREGLO SIMPLE Y ARRAYLIST
-Para los meses use un arreglo simple de tipo String llamado MESES que tiene los 12 meses del ano ya guardados. Como la cantidad de meses no cambia, el arreglo es de tamano fijo y para mostrar el mes que pide el usuario utilizo el indice MESES[numeroMes - 1].
+Para los meses use un arreglo simple de tipo String llamado MESES que tiene los 12 meses del año ya guardados. Como la cantidad de meses no cambia, el arreglo es de tamano fijo y para mostrar el mes que pide el usuario utilizo el indice MESES[numeroMes - 1].
 Para los trabajadores use una coleccion ArrayList llamada nomina. Elegi ArrayList porque la cantidad de empleados no es fija y puede ir aumentando conforme se registran. Para guardar cada empleado use el metodo add() y para saber cuantos empleados llevo registrados use el metodo size(). Para mostrar la lista completa en el reporte recorri el ArrayList utilizando un ciclo for de tipo for-each.
 
 2. CLASE ABSTRACTA Y METODOS ABSTRACTOS
